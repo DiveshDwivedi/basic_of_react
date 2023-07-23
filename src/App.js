@@ -5,7 +5,32 @@ import { users } from "./User_new";
 import { useState } from "react";
 
 function App() {
-  // Day - 4 Use State Hook
+  // Day - 3 Use State Hook
+  /*
+
+  it not updating so
+  let age = 0;
+
+  useState is a kind of function we can say
+  age is variable and setAge is function use to change age value
+  const [age, setAge] = useState(0); // passing initial value incase age it's 0
+  const increaseAge = () => {
+    // age = age+1;
+    setAge(age+1)
+  }
+
+  return (
+    <div className="App">
+
+      {age}
+      <button onClick={increaseAge}>click here</button>
+    </div>
+  )
+
+END
+   */
+
+// Day - 4 Use State Hook
 /*
   // Example:1
   const [inputValue, setInput] = useState('');
@@ -36,19 +61,19 @@ function App() {
       <div style={{ color: "blue" }}>{inputValue}</div>
     </div>
   );
-*/
+
   // Example: 2
 
-  // const [showText, setShowText] = useState(true);
+  const [showText, setShowText] = useState(true);
 
-  //   return (
-  //     <div className="App">
-  //       <button onClick={() => {
-  //         setShowText(!showText)
-  //       }}>show/hide</button>
-  //       {showText && <h2>My name is Divesh Dwivedi</h2>}
-  //     </div>
-  //   )
+    return (
+      <div className="App">
+        <button onClick={() => {
+          setShowText(!showText)
+        }}>show/hide</button>
+        {showText && <h2>My name is Divesh Dwivedi</h2>}
+      </div>
+    )
 
     // Example: 3
 
@@ -62,31 +87,35 @@ function App() {
         <h2 style={{ color: textcolor }}>My name is Divesh Dwivedi</h2>
       </div>
     )
+*/
 
-  // Day - 3 Use State Hook
-  /*
+// day - 5 
 
-  it not updating so
-  let age = 0;
+// const [inputCount, setCount] = useState(0);
 
-  useState is a kind of function we can say
-  age is variable and setAge is function use to change age value
-  const [age, setAge] = useState(0); // passing initial value incase age it's 0
-  const increaseAge = () => {
-    // age = age+1;
-    setAge(age+1)
-  }
+// const incrementValue = () => {
+//   setCount(inputCount+1);
+// }
+// const decrementValue = () => {
+//   setCount(inputCount-1);
+// }
 
-  return (
-    <div className="App">
+// const setZero = () => {
+//   setCount(0);
+// }
+return (
+  <div className="App">
+    {/* <button onClick={incrementValue}>increment</button>
+    <button onClick={decrementValue}>decrement</button>
+    <button onClick={setZero}>setZero</button>
+    {inputCount} */}
 
-      {age}
-      <button onClick={increaseAge}>click here</button>
-    </div>
-  )
+    <h1>Calling component separately from below</h1>
+    <MyButtonCount/>
+    <MyButtonCount/>
+  </div>
+)
 
-                         END
-   */
 
   // Basic React Concept
 
@@ -191,5 +220,16 @@ const Job = (props) => {
 //     </h1>
 //   );
 // }
+
+function MyButtonCount() {
+  const [count, setCount] = useState(0);
+
+const handleClick = () => {
+  setCount(count+1);
+}
+return (
+<button onClick={handleClick}>clicked {count} times</button>
+);
+}
 
 export default App;
