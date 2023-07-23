@@ -1,17 +1,76 @@
-import './App.css';
-import { Users } from './User';
-import { users} from './User_new';
+import "./App.css";
+import { Users } from "./User";
+import { users } from "./User_new";
 
-import { useState } from 'react';
- 
+import { useState } from "react";
+
 function App() {
+  // Day - 4 Use State Hook
+/*
+  // Example:1
+  const [inputValue, setInput] = useState('');
+  const handleInputChange = (event) => {
+    setInput(event.target.value);
+  }
+  return (
+    <div className="App">
+      <input type="text" onChange={handleInputChange}/>
+      <div style={{ color: "blue" }}>
+      {inputValue}
+      </div>
+    </div>
+  )
+
+  //  another way
+
+  const [inputValue, setInput] = useState("");
+
+  return (
+    <div className="App">
+      <input
+        type="text"
+        onChange={(event) => {
+          setInput(event.target.value);
+        }}
+      />
+      <div style={{ color: "blue" }}>{inputValue}</div>
+    </div>
+  );
+*/
+  // Example: 2
+
+  // const [showText, setShowText] = useState(true);
+
+  //   return (
+  //     <div className="App">
+  //       <button onClick={() => {
+  //         setShowText(!showText)
+  //       }}>show/hide</button>
+  //       {showText && <h2>My name is Divesh Dwivedi</h2>}
+  //     </div>
+  //   )
+
+    // Example: 3
+
+    const [textcolor, setTextColor] = useState('black');
+
+    return (
+      <div className="App">
+        <button onClick={() => {
+          setTextColor(textcolor === "red" ? 'black' : 'red')
+        }}>show/hide</button>
+        <h2 style={{ color: textcolor }}>My name is Divesh Dwivedi</h2>
+      </div>
+    )
+
   // Day - 3 Use State Hook
+  /*
 
-  // it not updating so
-  // let age = 0;
+  it not updating so
+  let age = 0;
 
-  // useState is a kind of function we can say
-  // age is variable and setAge is function use to change age value
+  useState is a kind of function we can say
+  age is variable and setAge is function use to change age value
   const [age, setAge] = useState(0); // passing initial value incase age it's 0
   const increaseAge = () => {
     // age = age+1;
@@ -26,8 +85,10 @@ function App() {
     </div>
   )
 
+                         END
+   */
 
-  // Basic React Concept 
+  // Basic React Concept
 
   // const users = [
   //   {name: 'raj', age:18},
@@ -35,8 +96,8 @@ function App() {
   //   {name: 'peter', age:19},
   //   {name: 'joe', age:28},
   // ]
-// console.log(users);.
-/*
+  // console.log(users);.
+  /*
   return (
     <div className="App">
       {users.map((user, key) => 
@@ -73,7 +134,7 @@ function App() {
     </div>
   )
    */
-  
+
   /*
   const name = "Divesh";
   const email = <h2>dwivedidivesh21@gmail.com</h2>
@@ -91,18 +152,18 @@ function App() {
   */
 }
 
-// js function 
+// js function
 const getName = () => {
-  return "Divesh"
-}
+  return "Divesh";
+};
 
 /**
  * js component always start with uppercase
  * @returns always UI stuff
  */
 const GetNameComponent = () => {
-  return <h1>Divesh </h1>
-}
+  return <h1>Divesh </h1>;
+};
 
 const User = (props) => {
   return (
@@ -111,7 +172,7 @@ const User = (props) => {
       <h2>{props.email}</h2>
     </div>
   );
-}
+};
 
 const Job = (props) => {
   return (
@@ -121,7 +182,7 @@ const Job = (props) => {
       <h2>{props.destination}</h2>
     </div>
   );
-}
+};
 
 // const Users = (props) => {
 //   return (
