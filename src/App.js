@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { Text } from './Text'
+import { ApiText } from './ApiText';
 function App() {
 
   const [showText, setShowText] = useState(false);
@@ -14,6 +15,8 @@ function App() {
       </button>
 
       { showText && <Text/> }
+
+      <div><ApiText/></div>
     </div>
   );
 }
